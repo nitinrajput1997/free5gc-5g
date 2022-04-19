@@ -31,4 +31,19 @@ Use WebConsole to Add an UE
 cd ~/free5gc/webconsole
 go run server.go
 ```
- Open your web browser from your host machine, and enter the URL http://yuor_server_ip:5000
+ Open your web browser from your host machine, and enter the URL http://your_server_ip:5000
+**Note:** On the login page, enter username admin and password free5gc
+
+### Port NatForwarding
+```bash
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+sudo systemctl stop ufw
+sudo iptables -I FORWARD 1 -j ACCEPT
+```
+
+make sure you have make proper changes to the free5GC configuration files, then run ./run.sh
+```bash
+cd ~/free5gc
+./run.sh
+```

@@ -31,3 +31,4 @@ Use WebConsole to Add an UE
 cd ~/free5gc/webconsole
 go run server.go
 ```
+ Open your web browser from your host machine, and enter the URL http://yuor_server_ip:5000

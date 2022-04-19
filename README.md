@@ -25,3 +25,9 @@ To build WebConsole
 cd free5gc
 make webconsole
 ```
+
+Use WebConsole to Add an UE
+```bash
+cd ~/free5gc/webconsole
+go run server.go
+```

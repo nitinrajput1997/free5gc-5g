@@ -47,3 +47,31 @@ make sure you have make proper changes to the free5GC configuration files, then 
 cd ~/free5gc
 ./run.sh
 ```
+
+### Install UERANSIM
+
+# install cmake and other packages
+sudo apt update
+sudo apt upgrade
+sudo apt install iproute2
+sudo snap install cmake --classic
+sudo apt install gcc
+sudo apt install g++
+sudo apt install libsctp-dev
+sudo apt install make
+
+# clone ueransim
+git clone https://github.com/aligungr/UERANSIM
+cd UERANSIM
+make
+Setup gNB
+We have to do some changes to the gNB config files located in UERANSIM/config/open5gs-gnb.yaml. Update the "linkIp", "ngapIp", "gtpIp" field with local ip (server ip) and "amfConfigs: address" field with amf ip.
+
+# start gnb with open5gc-gnb.yaml config file
+sudo ./build/nr-gnb -c config/free5gc-gnb.yaml
+Setup UE
+We have to do some changes to the UE config files located in UERANSIM/config/open5gs-ue.yaml. Update the "gnbSearchList" with the IP address of the server.
+
+# start gnb with open5gc-ue.yaml config file
+sudo ./build/nr-ue -c config/free5gc-ue.yaml
+

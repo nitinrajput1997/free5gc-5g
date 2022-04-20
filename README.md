@@ -68,7 +68,7 @@ cd UERANSIM
 make
 ```
 ### Setup gNB
-We have to do some changes to the gNB config files located in UERANSIM/config/open5gs-gnb.yaml. Update the "linkIp", "ngapIp", "gtpIp" field with local ip (server ip) and "amfConfigs: address" field with amf ip.
+We have to do some changes to the gNB config files located in UERANSIM/config/free5gc-gnb.yaml. Update the "linkIp", "ngapIp", "gtpIp" field with local ip (server ip) and "amfConfigs: address" field with amf ip.
 
 ```bash
 # start gnb with open5gc-gnb.yaml config file
@@ -76,7 +76,7 @@ sudo ./build/nr-gnb -c config/free5gc-gnb.yaml
 ```
 
 ### Setup UE
-We have to do some changes to the UE config files located in UERANSIM/config/open5gs-ue.yaml. Update the "gnbSearchList" with the IP address of the server.
+We have to do some changes to the UE config files located in UERANSIM/config/free5gc-ue.yaml. Update the "gnbSearchList" with the IP address of the server.
 
 ```bash
 # start gnb with open5gc-ue.yaml config file
